@@ -1,0 +1,4 @@
+## Method 1
+
+This is the 1st method to find the roots using the MATLAB program and is written in that very same syntax. The program takes a user input function ``X(1)`` and uses the ``inline `` command to form a function in the variable x. It then uses the  ``dif`` command in MATLAB math tools to determine the derivative of the user defined function and then the algorthm is written as a for loop. and the root is determined as the ouput. Suitable comments have been made for the user in the code. 
+_______________________________________________________________________________________________________________________________
