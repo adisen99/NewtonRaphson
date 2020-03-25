@@ -11,7 +11,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.interpolate import spline
-from Code2pdf.code2pdf import Code2pdf
 
 #Define the function prefixes using NumPy
 sin = np.sin
@@ -31,12 +30,12 @@ def df(x):
     return slope
 
 fx = input("Enter the function but not a logarithmic function :")      #take function as input from the user
-f = lambda x: eval(fx)                                                 # using lamda for defining function
+f = lambda x: eval(fx)                                                 # using lambda for defining function
 
 #Code to determine the points between which the root lies
 
 for x in range(0, 100):
-    if f(x)*f(x+1) < 0:
+    if f(x)*f(x+1) <= 0:
         print("The root lies between",int(x),"and",int(x+1))
 
 # Newton Raphson Method 
@@ -44,7 +43,7 @@ for x in range(0, 100):
 #Enter the initial approximation and Error as Input from User
 p = float((input("Enter the initial approximation :")))
 n = float((input("Input the number of iterations :")))
-e = int((input("Input the decimal places upto which you want the answer :")))
+e = int((input("Input the decimal places up to which you want the answer :")))
 
 #Define the Newton raphson function
 def nr(x):
@@ -65,7 +64,7 @@ def iterate(p, n):
     return x 
 
 a = iterate(p, n)
-print(round(a, e))                              #Final Solution
+print("The root of the entered equation is :" , round(a, e))                              #Final Solution
 
 #Code to plot the curve
 x = np.linspace(-10,10,10)
@@ -75,11 +74,12 @@ df_smooth = spline(x, df(x), xnew)
 
 #Plot the curves
 fig=plt.figure()
-plt.plot(xnew, f_smooth, 'b', label = 'function')
-plt.plot(xnew, df_smooth, 'g', label = 'derivative')
+plt.plot(xnew, f_smooth, '-b', label = 'function')
+plt.plot(xnew, df_smooth, '--g', label = 'derivative')
+plt.plot(round(a,e), 0, 'ro', label = 'The root of the function')
 plt.xlabel('x')
-plt.ylabel('f and df')
-fig.savefig('Newton__Raphson_Exp_2.png')
+plt.ylabel('fx and dfx')
+fig.savefig('Newton__Raphson_Exp.png')          #Export the image obtained
 fig.suptitle('Function and Derivative')
 plt.legend()
 
