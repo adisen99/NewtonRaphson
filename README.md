@@ -10,29 +10,41 @@ The MATLAB file contains two methods. Both follow the same algorithm of Newton-R
 
 To access the files you can either Download the zip file or use the following command from your terminal
 
+
 ``
 git clone https://github.com/adisen99/NewtonRaphson.git
 ``
+
 then
+
 
 ``
 cd NewtonRaphson
 ``
+
 **For the python file -**
+
+
 ``
 cd Python
 ``
+
 and 
+
 
 ``
 python3 Newton_Raphson.py
 ``
+
 **But, For the MATLAB files**
+
 
 ``
 cd Matlab/Method1 or cd Matlab/Mehthod2
 ``
+
 And then open the respective files in MATLAB.
+
 
 ##### Each directory also contains a separate README.md file that contains more information for that particular syntax/method.
 
